@@ -1,6 +1,9 @@
 ﻿Public Class VotingSystem
     'Number to tell which part of the voting they are in
-    Public Stage_Number As Int16 = 0
+    Private Stage_Number As Int16 = 0
+
+    'Current Window being used
+    Private Current_Window_Number As Int16 = 0
 
     'Student Voter Instance
     Public Voter As Students = New Students
@@ -30,8 +33,15 @@
     'Stores the candidates you voted for
     Public list_of_voted_candidates As ArrayList = New ArrayList()
 
+    Public Sub New()
+        'Load all the candidates at the start
+        InstantiateCandidates()
+    End Sub
+
     Public Function Instantiate_ordered_candidates()
         ordered_candidates(0, 0) = Joven
+        ' ordered_candidates(0, 0) = New BITS("19")
+        'ordered_candidates(0, 0).setImage("secretary.png")
         ordered_candidates(1, 0) = Patricia
         ordered_candidates(2, 0) = Grace
         ordered_candidates(3, 0) = Abstain
@@ -87,67 +97,88 @@
     Public Function ChangeInfo()
         'This is where you hardcode the order of candidates to vote for
         If Stage_Number = 0 Then
-            ChangeWindow3(ordered_candidates(0, Stage_Number), ordered_candidates(1, Stage_Number), ordered_candidates(2, Stage_Number), ordered_candidates(3, Stage_Number))
+            ChangeWindow(ordered_candidates(0, Stage_Number), ordered_candidates(1, Stage_Number), ordered_candidates(2, Stage_Number))
         ElseIf Stage_Number = 1 Then
-            ChangeWindow2(ordered_candidates(0, Stage_Number), ordered_candidates(1, Stage_Number), ordered_candidates(2, Stage_Number))
-            closeWindow3()
+            ChangeWindow(ordered_candidates(0, Stage_Number), ordered_candidates(1, Stage_Number))
         ElseIf Stage_Number = 2 Then
-            ChangeWindow1(ordered_candidates(0, Stage_Number), ordered_candidates(1, Stage_Number))
-            closeWindow2()
+            ChangeWindow(ordered_candidates(0, Stage_Number))
         ElseIf Stage_Number = 3 Then
-            ChangeWindow1(ordered_candidates(0, Stage_Number), ordered_candidates(1, Stage_Number))
+            ChangeWindow(ordered_candidates(0, Stage_Number))
         ElseIf Stage_Number = 4 Then
-            VotingSystem2018.LoginForm.Show()
+            
+            'Send the votes to the database
             Voting_System.sendVotesToDatabase()
-            closeWindow1()
+
+            'Close the last window manually
+            closeWindow(Current_Window_Number)
+
+            'Go back to the login menu
+            VotingSystem2018.LoginForm.Show()
+
         End If
     End Function
 
-    Public Function ChangeWindow1(ByVal Candidate1 As Candidates, ByVal Abstain As Candidates)
-        VotingSystem2018.VotingWindowFor1.Show()
-        VotingSystem2018.VotingWindowFor1.pictureBoxCandidate1.Image = Image.FromFile(CandidateImagesDirectory & Candidate1.getImage)
-        VotingSystem2018.VotingWindowFor1.lblName1.Text = Candidate1.getFullName
-        VotingSystem2018.VotingWindowFor1.lblParty1.Text = Candidate1.getParty
-        VotingSystem2018.VotingWindowFor1.radioCandidate1.Text = "Vote for" & Environment.NewLine & getFirstName(Candidate1.getFullName)
-    End Function
-    Public Function ChangeWindow2(ByVal Candidate1 As Candidates, ByVal Candidate2 As Candidates, ByVal Abstain As Candidates)
-        VotingSystem2018.VotingWindowFor2.Show()
-        VotingSystem2018.VotingWindowFor2.pictureBoxCandidate1.Image = Image.FromFile(CandidateImagesDirectory & Candidate1.getImage)
-        VotingSystem2018.VotingWindowFor2.lblName1.Text = Candidate1.getFullName
-        VotingSystem2018.VotingWindowFor2.lblParty1.Text = Candidate1.getParty
-        VotingSystem2018.VotingWindowFor2.radioCandidate1.Text = "Vote for" & Environment.NewLine & getFirstName(Candidate1.getFullName)
+    Public Function ChangeWindow(ByVal ParamArray Candidate() As Candidates)
+        If Candidate.Length = 1 Then
+            VotingSystem2018.VotingWindowFor1.Show()
+            VotingSystem2018.VotingWindowFor1.pictureBoxCandidate1.Image = Image.FromFile(CandidateImagesDirectory & Candidate(0).getImage)
+            VotingSystem2018.VotingWindowFor1.lblName1.Text = Candidate(0).getFullName
+            VotingSystem2018.VotingWindowFor1.lblParty1.Text = Candidate(0).getParty
+            VotingSystem2018.VotingWindowFor1.radioCandidate1.Text = "Vote for" & Environment.NewLine & getFirstName(Candidate(0).getFullName)
 
-        VotingSystem2018.VotingWindowFor2.pictureBoxCandidate2.Image = Image.FromFile(UtilityModule.CandidateImagesDirectory & Candidate2.getImage)
-        VotingSystem2018.VotingWindowFor2.lblName2.Text = Candidate2.getFullName
-        VotingSystem2018.VotingWindowFor2.lblParty2.Text = Candidate2.getParty
-        VotingSystem2018.VotingWindowFor2.radioCandidate2.Text = "Vote for" & Environment.NewLine & getFirstName(Candidate2.getFullName)
-    End Function
-    Public Function ChangeWindow3(ByVal Candidate1 As Candidates, ByVal Candidate2 As Candidates, ByVal Candidate3 As Candidates, ByVal Abstain As Candidates)
-        VotingSystem2018.VotingWindowFor3.Show()
-        VotingSystem2018.VotingWindowFor3.pictureBoxCandidate1.Image = Image.FromFile(CandidateImagesDirectory & Candidate1.getImage)
-        VotingSystem2018.VotingWindowFor3.lblName1.Text = Candidate1.getFullName
-        VotingSystem2018.VotingWindowFor3.lblParty1.Text = Candidate1.getParty
-        VotingSystem2018.VotingWindowFor3.radioCandidate1.Text = "Vote for" & Environment.NewLine & getFirstName(Candidate1.getFullName)
+            If Not Current_Window_Number = 1 Then
+                closeWindow(Current_Window_Number)
+                Current_Window_Number = 1
+            End If
+        ElseIf Candidate.Length = 2 Then
+            VotingSystem2018.VotingWindowFor2.Show()
+            VotingSystem2018.VotingWindowFor2.pictureBoxCandidate1.Image = Image.FromFile(CandidateImagesDirectory & Candidate(0).getImage)
+            VotingSystem2018.VotingWindowFor2.lblName1.Text = Candidate(0).getFullName
+            VotingSystem2018.VotingWindowFor2.lblParty1.Text = Candidate(0).getParty
+            VotingSystem2018.VotingWindowFor2.radioCandidate1.Text = "Vote for" & Environment.NewLine & getFirstName(Candidate(0).getFullName)
 
-        VotingSystem2018.VotingWindowFor3.pictureBoxCandidate2.Image = Image.FromFile(UtilityModule.CandidateImagesDirectory & Candidate2.getImage)
-        VotingSystem2018.VotingWindowFor3.lblName2.Text = Candidate2.getFullName
-        VotingSystem2018.VotingWindowFor3.lblParty2.Text = Candidate2.getParty
-        VotingSystem2018.VotingWindowFor3.radioCandidate2.Text = "Vote for" & Environment.NewLine & getFirstName(Candidate2.getFullName)
+            VotingSystem2018.VotingWindowFor2.pictureBoxCandidate2.Image = Image.FromFile(UtilityModule.CandidateImagesDirectory & Candidate(1).getImage)
+            VotingSystem2018.VotingWindowFor2.lblName2.Text = Candidate(1).getFullName
+            VotingSystem2018.VotingWindowFor2.lblParty2.Text = Candidate(1).getParty
+            VotingSystem2018.VotingWindowFor2.radioCandidate2.Text = "Vote for" & Environment.NewLine & getFirstName(Candidate(1).getFullName)
 
-        VotingSystem2018.VotingWindowFor3.pictureBoxCandidate3.Image = Image.FromFile(UtilityModule.CandidateImagesDirectory & Candidate3.getImage)
-        VotingSystem2018.VotingWindowFor3.lblName3.Text = Candidate3.getFullName
-        VotingSystem2018.VotingWindowFor3.lblParty3.Text = Candidate3.getParty
-        VotingSystem2018.VotingWindowFor3.radioCandidate3.Text = "Vote for" & Environment.NewLine & getFirstName(Candidate3.getFullName)
+            If Not Current_Window_Number = 2 Then
+                closeWindow(Current_Window_Number)
+                Current_Window_Number = 2
+            End If
+        ElseIf Candidate.Length = 3 Then
+            VotingSystem2018.VotingWindowFor3.Show()
+            VotingSystem2018.VotingWindowFor3.pictureBoxCandidate1.Image = Image.FromFile(CandidateImagesDirectory & Candidate(0).getImage)
+            VotingSystem2018.VotingWindowFor3.lblName1.Text = Candidate(0).getFullName
+            VotingSystem2018.VotingWindowFor3.lblParty1.Text = Candidate(0).getParty
+            VotingSystem2018.VotingWindowFor3.radioCandidate1.Text = "Vote for" & Environment.NewLine & getFirstName(Candidate(0).getFullName)
+
+            VotingSystem2018.VotingWindowFor3.pictureBoxCandidate2.Image = Image.FromFile(UtilityModule.CandidateImagesDirectory & Candidate(1).getImage)
+            VotingSystem2018.VotingWindowFor3.lblName2.Text = Candidate(1).getFullName
+            VotingSystem2018.VotingWindowFor3.lblParty2.Text = Candidate(1).getParty
+            VotingSystem2018.VotingWindowFor3.radioCandidate2.Text = "Vote for" & Environment.NewLine & getFirstName(Candidate(1).getFullName)
+
+            VotingSystem2018.VotingWindowFor3.pictureBoxCandidate3.Image = Image.FromFile(UtilityModule.CandidateImagesDirectory & Candidate(2).getImage)
+            VotingSystem2018.VotingWindowFor3.lblName3.Text = Candidate(2).getFullName
+            VotingSystem2018.VotingWindowFor3.lblParty3.Text = Candidate(2).getParty
+            VotingSystem2018.VotingWindowFor3.radioCandidate3.Text = "Vote for" & Environment.NewLine & getFirstName(Candidate(2).getFullName)
+
+            If Not Current_Window_Number = 3 Then
+                closeWindow(Current_Window_Number)
+                Current_Window_Number = 3
+            End If
+        End If
+
     End Function
 
-    Public Function closeWindow1()
-        VotingSystem2018.VotingWindowFor1.Close()
-    End Function
-    Public Function closeWindow2()
-        VotingSystem2018.VotingWindowFor2.Close()
-    End Function
-    Public Function closeWindow3()
-        VotingSystem2018.VotingWindowFor3.Close()
+    Public Function closeWindow(ByVal Window_Number As Int16)
+        If Window_Number = 1 Then
+            VotingSystem2018.VotingWindowFor1.Close()
+        ElseIf Window_Number = 2 Then
+            VotingSystem2018.VotingWindowFor2.Close()
+        ElseIf Window_Number = 3 Then
+            VotingSystem2018.VotingWindowFor3.Close()
+        End If
     End Function
 
     Public Function Vote(ByVal vote_number As Int16) As Candidates

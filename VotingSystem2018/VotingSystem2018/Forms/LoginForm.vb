@@ -4,9 +4,6 @@
         DateTimer.Start()
 
         Label1.Parent = PictureBox1
-
-        'Load all the candidates at the start
-        Voting_System.InstantiateCandidates()
     End Sub
     'Simulate real time clock
     Private Sub DateTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DateTimer.Tick

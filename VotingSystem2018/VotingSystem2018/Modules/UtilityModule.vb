@@ -2,7 +2,7 @@
 
 Module UtilityModule
 
-    Public ProjectDirectory As String = "C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System\VotingSystem2018\"
+    Public ProjectDirectory As String = "C:\Users\bryan2366\Desktop\Code Projects\Github Repositories\Belcom-Voting-System\VotingSystem2018\"
     Public ImagesDirectory As String = ProjectDirectory & "VotingSystem2018\Pictures\"
     Public UIImagesDirectory As String = ImagesDirectory & "UI\"
     Public CandidateImagesDirectory As String = ImagesDirectory & "Candidates\"
