@@ -1,0 +1,27 @@
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System-(2018)\VotingSystem2018\VotingSystem2018\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System-(2018)\VotingSystem2018\VotingSystem2018\obj\Debug\VotingSystem2018.LoginForm.resources
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System-(2018)\VotingSystem2018\VotingSystem2018\obj\Debug\VotingSystem2018.Resources.resources
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System-(2018)\VotingSystem2018\VotingSystem2018\obj\Debug\VotingSystem2018.vbproj.GenerateResource.Cache
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System-(2018)\VotingSystem2018\VotingSystem2018\obj\Debug\VotingSystem2018.MainMenu.resources
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System-(2018)\VotingSystem2018\VotingSystem2018\obj\Debug\VotingSystem2018.VotingWindow.resources
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System-(2018)\VotingSystem2018\VotingSystem2018\bin\Debug\Voting System 2018.exe
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System-(2018)\VotingSystem2018\VotingSystem2018\bin\Debug\Voting System 2018.pdb
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System-(2018)\VotingSystem2018\VotingSystem2018\bin\Debug\Voting System 2018.xml
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System-(2018)\VotingSystem2018\VotingSystem2018\obj\Debug\Voting System 2018.exe
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System-(2018)\VotingSystem2018\VotingSystem2018\obj\Debug\Voting System 2018.xml
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System-(2018)\VotingSystem2018\VotingSystem2018\obj\Debug\Voting System 2018.pdb
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System-(2018)\VotingSystem2018\VotingSystem2018\obj\Debug\VotingSystem2018.SplashScreen.resources
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System\VotingSystem2018\VotingSystem2018\obj\Debug\Voting System 2018.exe
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System\VotingSystem2018\VotingSystem2018\obj\Debug\Voting System 2018.xml
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System\VotingSystem2018\VotingSystem2018\obj\Debug\Voting System 2018.pdb
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System\VotingSystem2018\VotingSystem2018\bin\Debug\Voting System 2018.exe
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System\VotingSystem2018\VotingSystem2018\bin\Debug\Voting System 2018.pdb
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System\VotingSystem2018\VotingSystem2018\bin\Debug\Voting System 2018.xml
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System\VotingSystem2018\VotingSystem2018\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System\VotingSystem2018\VotingSystem2018\obj\Debug\VotingSystem2018.LoginForm.resources
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System\VotingSystem2018\VotingSystem2018\obj\Debug\VotingSystem2018.Resources.resources
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System\VotingSystem2018\VotingSystem2018\obj\Debug\VotingSystem2018.SplashScreen.resources
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System\VotingSystem2018\VotingSystem2018\obj\Debug\VotingSystem2018.vbproj.GenerateResource.Cache
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System\VotingSystem2018\VotingSystem2018\obj\Debug\VotingSystem2018.VotingWindowFor3.resources
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System\VotingSystem2018\VotingSystem2018\obj\Debug\VotingSystem2018.VotingWindowFor2.resources
+C:\Users\bryan2366\Desktop\Code Projects\Belcom-Voting-System\VotingSystem2018\VotingSystem2018\obj\Debug\VotingSystem2018.VotingWindowFor1.resources
