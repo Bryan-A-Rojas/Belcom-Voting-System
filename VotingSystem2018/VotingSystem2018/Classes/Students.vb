@@ -1,83 +1,90 @@
 ﻿Public Class Students
-    Inherits Person
 
-    Private fullName As String
-    Private yearLevel As String
-    Private course As String
-    Private major As String
-    Private password As String
-    Private role As String
-    Private voted As String
+    'Student Properties/Fields
+    Private StudentID As Integer
+    Private Name As String
+    Private YearLevel As String
+    Private Course As String
+    Private Major As String
+    Private Role As String
+    Private DateVoted As String
 
-    'Place this in the student class instead
-    'Retrieves student details based on password
-    Public Overrides Sub getDetails(ByVal condition As String)
-        Database.SetSql("SELECT FullName, YearLevel, Course, Major, Password, Role, Voted FROM tbl_students WHERE Password = @value")
-        Dim tablename As String = "tbl_students"
-
-        Me.setFullName(Database.GetDataSetRow(condition, tablename, 0))
-        Me.setYearLevel(Database.GetDataSetRow(condition, tablename, 1))
-        Me.setCourse(Database.GetDataSetRow(condition, tablename, 2))
-        Me.setMajor(Database.GetDataSetRow(condition, tablename, 3))
-        Me.setPassword(Database.GetDataSetRow(condition, tablename, 4))
-        Me.setRole(Database.GetDataSetRow(condition, tablename, 5))
-        Me.setVoted(Database.GetDataSetRow(condition, tablename, 6))
+    'Constructor
+    Public Sub New(ByVal StudentID As Integer)
+        'Retrieve database details of student
+        getDetails(StudentID)
     End Sub
+
+    'Retrieves student details based on their ID number
+    Public Sub getDetails(ByVal condition As String)
+        Database.SetSql("SELECT StudentID, Name, YearLevel, Course, Major, Role, DateVoted FROM Students WHERE StudentID = @value")
+        Dim tablename As String = "Students"
+
+        Me.setStudentID(Database.GetDataSetRow(condition, tablename, 0))
+        Me.setName(Database.GetDataSetRow(condition, tablename, 1))
+        Me.setYearLevel(Database.GetDataSetRow(condition, tablename, 2))
+        Me.setCourse(Database.GetDataSetRow(condition, tablename, 3))
+        Me.setMajor(Database.GetDataSetRow(condition, tablename, 4))
+        Me.setRole(Database.GetDataSetRow(condition, tablename, 5))
+        Me.setDateVoted(Database.GetDataSetRow(condition, tablename, 6))
+    End Sub
+
+
+
+    'StudentID Getter and Setter 
+    Public Sub setStudentID(ByVal id As Integer)
+        Me.StudentID = id
+    End Sub
+    Public Function getStudentID()
+        getStudentID = Me.StudentID
+    End Function
 
     'Full Name Getter and Setter 
-    Public Sub setFullName(ByVal name As String)
-        fullName = name
+    Public Sub setName(ByVal name As String)
+        Me.Name = name
     End Sub
-    Public Function getFullName()
-        getFullName = fullName
+    Public Function getName()
+        getName = Me.Name
     End Function
 
     'Year Level Getter and Setter 
     Public Sub setYearLevel(ByVal yearlvl As String)
-        yearLevel = yearlvl
+        YearLevel = yearlvl
     End Sub
     Public Function getYearLevel()
-        getYearLevel = yearLevel
+        getYearLevel = YearLevel
     End Function
 
     'Course Getter and Setter 
     Public Sub setCourse(ByVal coursestring As String)
-        course = coursestring
+        Course = coursestring
     End Sub
     Public Function getCourse()
-        getCourse = course
+        getCourse = Course
     End Function
 
     'Major Getter and Setter 
     Public Sub setMajor(ByVal maj As String)
-        major = maj
+        Major = maj
     End Sub
     Public Function getMajor()
-        getMajor = major
-    End Function
-
-    'Password Getter and Setter 
-    Public Sub setPassword(ByVal pass As String)
-        password = pass
-    End Sub
-    Public Function getPassword()
-        getPassword = password
+        getMajor = Major
     End Function
 
     'Role Getter and Setter 
     Public Sub setRole(ByVal rol As String)
-        role = rol
+        Role = rol
     End Sub
     Public Function getRole()
-        getRole = role
+        getRole = Role
     End Function
 
     'Voted Getter and Setter 
-    Public Sub setVoted(ByVal vote As String)
-        voted = vote
+    Public Sub setDateVoted(ByVal vote As String)
+        Me.DateVoted = vote
     End Sub
-    Public Function getVoted()
-        getVoted = voted
+    Public Function getDateVoted()
+        getDateVoted = Me.DateVoted
     End Function
 
 End Class

@@ -1,7 +1,9 @@
 ﻿Imports System.Drawing.Imaging
+Imports System.Text.RegularExpressions
 
 Module UtilityModule
 
+    'Config Directories
     Public ProjectDirectory As String = "C:\Users\bryan2366\Desktop\Code Projects\Github Repositories\Belcom-Voting-System\VotingSystem2018\"
     Public ImagesDirectory As String = ProjectDirectory & "VotingSystem2018\Pictures\"
     Public UIImagesDirectory As String = ImagesDirectory & "UI\"
@@ -52,7 +54,8 @@ Module UtilityModule
 
     'Get first name of a person after the space
     Function getFirstName(ByVal full_name As String) As String
-        Return full_name.Substring(0, full_name.IndexOf(" "))
+        Dim split_string() As String = Regex.Split(full_name, "\s+")
+        Return split_string(1).Replace(" ", "")
     End Function
 
 End Module

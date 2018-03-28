@@ -40,7 +40,7 @@ Partial Class VotingWindowFor2
         Me.pictureBoxCandidate1 = New System.Windows.Forms.PictureBox
         Me.PictureBox2 = New System.Windows.Forms.PictureBox
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
-        Me.Label6 = New System.Windows.Forms.Label
+        Me.lblPosition = New System.Windows.Forms.Label
         CType(Me.pictureBoxCandidate2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pictureBoxCandidate1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -50,9 +50,9 @@ Partial Class VotingWindowFor2
         'lblDateAndTime
         '
         Me.lblDateAndTime.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.lblDateAndTime.Location = New System.Drawing.Point(553, 3)
+        Me.lblDateAndTime.Location = New System.Drawing.Point(649, 3)
         Me.lblDateAndTime.Name = "lblDateAndTime"
-        Me.lblDateAndTime.Size = New System.Drawing.Size(287, 44)
+        Me.lblDateAndTime.Size = New System.Drawing.Size(191, 44)
         Me.lblDateAndTime.TabIndex = 64
         Me.lblDateAndTime.Text = "Date and Time"
         Me.lblDateAndTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -84,7 +84,7 @@ Partial Class VotingWindowFor2
         '
         'btnVote
         '
-        Me.btnVote.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnVote.BackColor = System.Drawing.Color.Lime
         Me.btnVote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnVote.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnVote.Location = New System.Drawing.Point(745, 417)
@@ -211,15 +211,15 @@ Partial Class VotingWindowFor2
         Me.PictureBox1.TabIndex = 60
         Me.PictureBox1.TabStop = False
         '
-        'Label6
+        'lblPosition
         '
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(301, 64)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(218, 35)
-        Me.Label6.TabIndex = 86
-        Me.Label6.Text = "Position to vote for"
-        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblPosition.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPosition.Location = New System.Drawing.Point(249, 64)
+        Me.lblPosition.Name = "lblPosition"
+        Me.lblPosition.Size = New System.Drawing.Size(442, 36)
+        Me.lblPosition.TabIndex = 87
+        Me.lblPosition.Text = "Position to vote for"
+        Me.lblPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'VotingWindowFor2
         '
@@ -227,7 +227,7 @@ Partial Class VotingWindowFor2
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(900, 500)
-        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.lblPosition)
         Me.Controls.Add(Me.lblParty2)
         Me.Controls.Add(Me.lblName2)
         Me.Controls.Add(Me.radioCandidate2)
@@ -245,6 +245,7 @@ Partial Class VotingWindowFor2
         Me.Controls.Add(Me.PictureBox1)
         Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "VotingWindowFor2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "VotingWindow"
@@ -272,5 +273,5 @@ Partial Class VotingWindowFor2
     Friend WithEvents radioCandidate2 As System.Windows.Forms.RadioButton
     Friend WithEvents lblParty2 As System.Windows.Forms.Label
     Friend WithEvents lblName2 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents lblPosition As System.Windows.Forms.Label
 End Class

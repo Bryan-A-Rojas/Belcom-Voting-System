@@ -2,8 +2,6 @@
     'On Load
     Private Sub VotingWindow_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         DateTimer.Start()
-
-
     End Sub
 
     'Simulate real time clock
@@ -12,7 +10,7 @@
     End Sub
 
     Private Sub btnVote_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVote.Click
-        Dim vote_number As Int16
+        Dim vote_number As Integer
 
         If Me.radioCandidate1.Checked Then
             vote_number = 0
@@ -22,6 +20,4 @@
 
         Voting_System.Vote(vote_number)
     End Sub
-
-
 End Class

@@ -1,88 +1,70 @@
-﻿Public MustInherit Class Candidates
-    Inherits Person
+﻿Public Class Candidates
+    Inherits Students
 
-    Private ID As String
-    Private fullName As String
+    'Candidates Properties/Fields
+    Private Image As String
     Private Party As String
     Private Position As String
-    Private Votes As Integer
-    Private Image As String
+    Private Organization As String
 
-    Private TableName As String
-
-    'Update database add 1 vote for this candidate
-    Sub voteFor()
-        Database.SetSql("UPDATE " & Me.getTableName & " SET Votes = Votes + 1 WHERE ID = @value")
-        Database.ExecuteNonQuery(Me.getID)
+    'Constructor
+    Public Sub New(ByVal StudentID As Integer)
+        'Instantiate Students class
+        MyBase.New(StudentID)
+        'Retrieve database details of candidate
+        getDetails(StudentID)
     End Sub
 
     'Retrieves data about candidate from database
-    Overrides Sub getDetails(ByVal condition As String)
-        Database.SetSql("SELECT ID, Name, Party, Position, Votes FROM " & Me.getTableName & " WHERE ID = @value")
-        Dim tablename As String = Me.getTableName
+    Public Sub getDetails(ByVal condition As String)
+        'SQL Query
+        Database.SetSql("SELECT Image, Party, Position, Organization FROM Candidates WHERE StudentID = @value")
+        Dim tablename As String = "Candidates"
 
-        Me.setID(Database.GetDataSetRow(condition, tablename, 0))
-        Me.setFullName(Database.GetDataSetRow(condition, tablename, 1))
-        Me.setParty(Database.GetDataSetRow(condition, tablename, 2))
-        Me.setPosition(Database.GetDataSetRow(condition, tablename, 3))
-        Me.setVotes(Database.GetDataSetRow(condition, tablename, 4))
+        Me.setImage(Database.GetDataSetRow(condition, tablename, 0))
+        Me.setParty(Database.GetDataSetRow(condition, tablename, 1))
+        Me.setPosition(Database.GetDataSetRow(condition, tablename, 2))
+        Me.setOrganization(Database.GetDataSetRow(condition, tablename, 3))
+    End Sub
+
+    'Add 1 vote to this candidate in the database
+    Sub voteFor()
+        Database.SetSql("UPDATE Candidates SET NumberOfVotes = NumberOfVotes + 1 WHERE StudentID = @value")
+        Database.ExecuteNonQuery(Me.getStudentID)
     End Sub
 
 
-    'ID Getter and Setter 
-    Public Sub setID(ByVal idnum As String)
-        ID = idnum
-    End Sub
-    Public Function getID()
-        getID = ID
-    End Function
 
-    'Full Name Getter and Setter 
-    Public Sub setFullName(ByVal name As String)
-        fullName = name
+    'Image Getter and Setter 
+    Public Sub setImage(ByRef Img As String)
+        Me.Image = Img
     End Sub
-    Public Function getFullName()
-        getFullName = fullName
+    Public Function getImage()
+        getImage = Me.Image
     End Function
 
     'Party Getter and Setter 
     Public Sub setParty(ByVal partyvar As String)
-        Party = partyvar
+        Me.Party = partyvar
     End Sub
     Public Function getParty()
-        getParty = Party
+        getParty = Me.Party
     End Function
 
     'Position Getter and Setter 
     Public Sub setPosition(ByVal positionvar As String)
-        Position = positionvar
+        Me.Position = positionvar
     End Sub
     Public Function getPosition()
-        getPosition = Position
+        getPosition = Me.Position
     End Function
 
-    'Votes Getter and Setter 
-    Public Sub setVotes(ByVal votecount As Integer)
-        Votes = votecount
+    'Organization Getter and Setter 
+    Public Sub setOrganization(ByVal org As String)
+        Me.Organization = org
     End Sub
-    Public Function getVotes()
-        getVotes = Votes
-    End Function
-
-    'Image Getter and Setter 
-    Public Sub setImage(ByRef Img As String)
-        Image = Img
-    End Sub
-    Public Function getImage()
-        getImage = Image
-    End Function
-
-    'TableName Getter and Setter
-    Public Sub setTableName(ByVal str As String)
-        TableName = str
-    End Sub
-    Public Function getTableName()
-        getTableName = TableName
+    Public Function getOrganization()
+        getOrganization = Me.Organization
     End Function
 
 End Class

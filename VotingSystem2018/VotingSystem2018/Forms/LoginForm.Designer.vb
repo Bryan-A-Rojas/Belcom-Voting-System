@@ -25,18 +25,18 @@ Partial Class LoginForm
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoginForm))
         Me.btnLogin = New System.Windows.Forms.Button
-        Me.txtPassword = New System.Windows.Forms.TextBox
+        Me.txtStudentID = New System.Windows.Forms.TextBox
         Me.PasswordLabel = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
         Me.DateTimer = New System.Windows.Forms.Timer(Me.components)
         Me.btnExit = New System.Windows.Forms.Label
         Me.lblDateAndTime = New System.Windows.Forms.Label
-        Me.Button1 = New System.Windows.Forms.Button
         Me.PictureBox2 = New System.Windows.Forms.PictureBox
         Me.LogoPictureBox = New System.Windows.Forms.PictureBox
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
-        Me.Button2 = New System.Windows.Forms.Button
+        Me.txtStudentName = New System.Windows.Forms.TextBox
+        Me.Label3 = New System.Windows.Forms.Label
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -46,33 +46,31 @@ Partial Class LoginForm
         '
         Me.btnLogin.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLogin.Location = New System.Drawing.Point(431, 312)
+        Me.btnLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogin.Location = New System.Drawing.Point(485, 333)
         Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(149, 63)
+        Me.btnLogin.Size = New System.Drawing.Size(92, 42)
         Me.btnLogin.TabIndex = 17
-        Me.btnLogin.Text = "&Login"
+        Me.btnLogin.Text = "Login"
         Me.btnLogin.UseVisualStyleBackColor = False
         '
-        'txtPassword
+        'txtStudentID
         '
-        Me.txtPassword.Font = New System.Drawing.Font("Segoe UI", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPassword.Location = New System.Drawing.Point(321, 259)
-        Me.txtPassword.Multiline = True
-        Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPassword.Size = New System.Drawing.Size(259, 47)
-        Me.txtPassword.TabIndex = 16
+        Me.txtStudentID.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtStudentID.Location = New System.Drawing.Point(318, 289)
+        Me.txtStudentID.Name = "txtStudentID"
+        Me.txtStudentID.Size = New System.Drawing.Size(259, 39)
+        Me.txtStudentID.TabIndex = 16
         '
         'PasswordLabel
         '
         Me.PasswordLabel.BackColor = System.Drawing.Color.Transparent
-        Me.PasswordLabel.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PasswordLabel.Location = New System.Drawing.Point(313, 214)
+        Me.PasswordLabel.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PasswordLabel.Location = New System.Drawing.Point(312, 255)
         Me.PasswordLabel.Name = "PasswordLabel"
-        Me.PasswordLabel.Size = New System.Drawing.Size(220, 42)
+        Me.PasswordLabel.Size = New System.Drawing.Size(220, 33)
         Me.PasswordLabel.TabIndex = 15
-        Me.PasswordLabel.Text = "&Password"
+        Me.PasswordLabel.Text = "Student ID"
         Me.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label1
@@ -81,7 +79,7 @@ Partial Class LoginForm
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Old English Text MT", 20.0!)
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(262, 86)
+        Me.Label1.Location = New System.Drawing.Point(262, 81)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(318, 32)
         Me.Label1.TabIndex = 26
@@ -92,7 +90,7 @@ Partial Class LoginForm
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(282, 130)
+        Me.Label2.Location = New System.Drawing.Point(282, 125)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(347, 47)
         Me.Label2.TabIndex = 28
@@ -126,16 +124,6 @@ Partial Class LoginForm
         Me.lblDateAndTime.Text = "Date and Time"
         Me.lblDateAndTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Button1
-        '
-        Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(12, 12)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(91, 23)
-        Me.Button1.TabIndex = 58
-        Me.Button1.Text = "Vote Tester"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
@@ -168,15 +156,24 @@ Partial Class LoginForm
         Me.PictureBox1.TabIndex = 27
         Me.PictureBox1.TabStop = False
         '
-        'Button2
+        'txtStudentName
         '
-        Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Location = New System.Drawing.Point(109, 12)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(104, 23)
-        Me.Button2.TabIndex = 59
-        Me.Button2.Text = "Check Array List"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.txtStudentName.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtStudentName.Location = New System.Drawing.Point(318, 214)
+        Me.txtStudentName.Name = "txtStudentName"
+        Me.txtStudentName.Size = New System.Drawing.Size(259, 39)
+        Me.txtStudentName.TabIndex = 61
+        '
+        'Label3
+        '
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(312, 178)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(220, 33)
+        Me.Label3.TabIndex = 60
+        Me.Label3.Text = "Student Name"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'LoginForm
         '
@@ -184,20 +181,21 @@ Partial Class LoginForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(900, 500)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.txtStudentName)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.lblDateAndTime)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnLogin)
-        Me.Controls.Add(Me.txtPassword)
+        Me.Controls.Add(Me.txtStudentID)
         Me.Controls.Add(Me.PasswordLabel)
         Me.Controls.Add(Me.LogoPictureBox)
         Me.Controls.Add(Me.PictureBox1)
         Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "LoginForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
@@ -209,7 +207,7 @@ Partial Class LoginForm
 
     End Sub
     Friend WithEvents btnLogin As System.Windows.Forms.Button
-    Friend WithEvents txtPassword As System.Windows.Forms.TextBox
+    Friend WithEvents txtStudentID As System.Windows.Forms.TextBox
     Friend WithEvents PasswordLabel As System.Windows.Forms.Label
     Friend WithEvents LogoPictureBox As System.Windows.Forms.PictureBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
@@ -219,7 +217,7 @@ Partial Class LoginForm
     Friend WithEvents DateTimer As System.Windows.Forms.Timer
     Friend WithEvents btnExit As System.Windows.Forms.Label
     Friend WithEvents lblDateAndTime As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents txtStudentName As System.Windows.Forms.TextBox
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 
 End Class

@@ -36,7 +36,6 @@ Partial Class VotingWindowFor3
         Me.radioCandidate2 = New System.Windows.Forms.RadioButton
         Me.lblParty2 = New System.Windows.Forms.Label
         Me.lblName2 = New System.Windows.Forms.Label
-        Me.Label6 = New System.Windows.Forms.Label
         Me.lblParty3 = New System.Windows.Forms.Label
         Me.lblName3 = New System.Windows.Forms.Label
         Me.radioCandidate3 = New System.Windows.Forms.RadioButton
@@ -45,6 +44,7 @@ Partial Class VotingWindowFor3
         Me.pictureBoxCandidate1 = New System.Windows.Forms.PictureBox
         Me.PictureBox2 = New System.Windows.Forms.PictureBox
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
+        Me.lblPosition = New System.Windows.Forms.Label
         CType(Me.pictureBoxCandidate3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pictureBoxCandidate2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pictureBoxCandidate1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,9 +55,9 @@ Partial Class VotingWindowFor3
         'lblDateAndTime
         '
         Me.lblDateAndTime.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.lblDateAndTime.Location = New System.Drawing.Point(553, 3)
+        Me.lblDateAndTime.Location = New System.Drawing.Point(655, 3)
         Me.lblDateAndTime.Name = "lblDateAndTime"
-        Me.lblDateAndTime.Size = New System.Drawing.Size(287, 44)
+        Me.lblDateAndTime.Size = New System.Drawing.Size(185, 44)
         Me.lblDateAndTime.TabIndex = 64
         Me.lblDateAndTime.Text = "Date and Time"
         Me.lblDateAndTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -89,12 +89,12 @@ Partial Class VotingWindowFor3
         '
         'btnVote
         '
-        Me.btnVote.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnVote.BackColor = System.Drawing.Color.Lime
         Me.btnVote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnVote.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnVote.Location = New System.Drawing.Point(745, 417)
+        Me.btnVote.Location = New System.Drawing.Point(745, 429)
         Me.btnVote.Name = "btnVote"
-        Me.btnVote.Size = New System.Drawing.Size(143, 71)
+        Me.btnVote.Size = New System.Drawing.Size(143, 59)
         Me.btnVote.TabIndex = 69
         Me.btnVote.Text = "&Vote"
         Me.btnVote.UseVisualStyleBackColor = False
@@ -103,7 +103,7 @@ Partial Class VotingWindowFor3
         '
         Me.radioCandidate1.AutoSize = True
         Me.radioCandidate1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.radioCandidate1.Location = New System.Drawing.Point(117, 348)
+        Me.radioCandidate1.Location = New System.Drawing.Point(117, 362)
         Me.radioCandidate1.Name = "radioCandidate1"
         Me.radioCandidate1.Size = New System.Drawing.Size(105, 29)
         Me.radioCandidate1.TabIndex = 66
@@ -126,7 +126,7 @@ Partial Class VotingWindowFor3
         'lblName1
         '
         Me.lblName1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblName1.Location = New System.Drawing.Point(112, 274)
+        Me.lblName1.Location = New System.Drawing.Point(112, 288)
         Me.lblName1.Name = "lblName1"
         Me.lblName1.Size = New System.Drawing.Size(250, 33)
         Me.lblName1.TabIndex = 70
@@ -136,7 +136,7 @@ Partial Class VotingWindowFor3
         'lblParty1
         '
         Me.lblParty1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblParty1.Location = New System.Drawing.Point(112, 307)
+        Me.lblParty1.Location = New System.Drawing.Point(112, 321)
         Me.lblParty1.Name = "lblParty1"
         Me.lblParty1.Size = New System.Drawing.Size(250, 33)
         Me.lblParty1.TabIndex = 71
@@ -147,7 +147,7 @@ Partial Class VotingWindowFor3
         '
         Me.radioCandidate2.AutoSize = True
         Me.radioCandidate2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.radioCandidate2.Location = New System.Drawing.Point(387, 348)
+        Me.radioCandidate2.Location = New System.Drawing.Point(387, 362)
         Me.radioCandidate2.Name = "radioCandidate2"
         Me.radioCandidate2.Size = New System.Drawing.Size(105, 29)
         Me.radioCandidate2.TabIndex = 77
@@ -157,7 +157,7 @@ Partial Class VotingWindowFor3
         'lblParty2
         '
         Me.lblParty2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblParty2.Location = New System.Drawing.Point(383, 307)
+        Me.lblParty2.Location = New System.Drawing.Point(383, 321)
         Me.lblParty2.Name = "lblParty2"
         Me.lblParty2.Size = New System.Drawing.Size(248, 33)
         Me.lblParty2.TabIndex = 79
@@ -167,27 +167,17 @@ Partial Class VotingWindowFor3
         'lblName2
         '
         Me.lblName2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblName2.Location = New System.Drawing.Point(383, 274)
+        Me.lblName2.Location = New System.Drawing.Point(383, 288)
         Me.lblName2.Name = "lblName2"
         Me.lblName2.Size = New System.Drawing.Size(248, 33)
         Me.lblName2.TabIndex = 78
         Me.lblName2.Text = "Name"
         Me.lblName2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Label6
-        '
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(384, 35)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(170, 35)
-        Me.Label6.TabIndex = 85
-        Me.Label6.Text = "Position to vote for"
-        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
         'lblParty3
         '
         Me.lblParty3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblParty3.Location = New System.Drawing.Point(650, 307)
+        Me.lblParty3.Location = New System.Drawing.Point(650, 321)
         Me.lblParty3.Name = "lblParty3"
         Me.lblParty3.Size = New System.Drawing.Size(238, 33)
         Me.lblParty3.TabIndex = 84
@@ -197,7 +187,7 @@ Partial Class VotingWindowFor3
         'lblName3
         '
         Me.lblName3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblName3.Location = New System.Drawing.Point(650, 274)
+        Me.lblName3.Location = New System.Drawing.Point(650, 288)
         Me.lblName3.Name = "lblName3"
         Me.lblName3.Size = New System.Drawing.Size(238, 33)
         Me.lblName3.TabIndex = 83
@@ -208,7 +198,7 @@ Partial Class VotingWindowFor3
         '
         Me.radioCandidate3.AutoSize = True
         Me.radioCandidate3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.radioCandidate3.Location = New System.Drawing.Point(654, 348)
+        Me.radioCandidate3.Location = New System.Drawing.Point(654, 362)
         Me.radioCandidate3.Name = "radioCandidate3"
         Me.radioCandidate3.Size = New System.Drawing.Size(105, 29)
         Me.radioCandidate3.TabIndex = 82
@@ -219,7 +209,7 @@ Partial Class VotingWindowFor3
         '
         Me.pictureBoxCandidate3.BackColor = System.Drawing.Color.White
         Me.pictureBoxCandidate3.Image = CType(resources.GetObject("pictureBoxCandidate3.Image"), System.Drawing.Image)
-        Me.pictureBoxCandidate3.Location = New System.Drawing.Point(655, 87)
+        Me.pictureBoxCandidate3.Location = New System.Drawing.Point(655, 101)
         Me.pictureBoxCandidate3.Name = "pictureBoxCandidate3"
         Me.pictureBoxCandidate3.Size = New System.Drawing.Size(198, 184)
         Me.pictureBoxCandidate3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -230,7 +220,7 @@ Partial Class VotingWindowFor3
         '
         Me.pictureBoxCandidate2.BackColor = System.Drawing.Color.White
         Me.pictureBoxCandidate2.Image = CType(resources.GetObject("pictureBoxCandidate2.Image"), System.Drawing.Image)
-        Me.pictureBoxCandidate2.Location = New System.Drawing.Point(388, 87)
+        Me.pictureBoxCandidate2.Location = New System.Drawing.Point(388, 101)
         Me.pictureBoxCandidate2.Name = "pictureBoxCandidate2"
         Me.pictureBoxCandidate2.Size = New System.Drawing.Size(198, 184)
         Me.pictureBoxCandidate2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -241,7 +231,7 @@ Partial Class VotingWindowFor3
         '
         Me.pictureBoxCandidate1.BackColor = System.Drawing.Color.White
         Me.pictureBoxCandidate1.Image = CType(resources.GetObject("pictureBoxCandidate1.Image"), System.Drawing.Image)
-        Me.pictureBoxCandidate1.Location = New System.Drawing.Point(117, 87)
+        Me.pictureBoxCandidate1.Location = New System.Drawing.Point(117, 101)
         Me.pictureBoxCandidate1.Name = "pictureBoxCandidate1"
         Me.pictureBoxCandidate1.Size = New System.Drawing.Size(198, 184)
         Me.pictureBoxCandidate1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -268,13 +258,23 @@ Partial Class VotingWindowFor3
         Me.PictureBox1.TabIndex = 60
         Me.PictureBox1.TabStop = False
         '
+        'lblPosition
+        '
+        Me.lblPosition.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPosition.Location = New System.Drawing.Point(232, 64)
+        Me.lblPosition.Name = "lblPosition"
+        Me.lblPosition.Size = New System.Drawing.Size(501, 34)
+        Me.lblPosition.TabIndex = 87
+        Me.lblPosition.Text = "Position to vote for"
+        Me.lblPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'VotingWindowFor3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(900, 500)
-        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.lblPosition)
         Me.Controls.Add(Me.lblParty3)
         Me.Controls.Add(Me.lblName3)
         Me.Controls.Add(Me.radioCandidate3)
@@ -296,6 +296,7 @@ Partial Class VotingWindowFor3
         Me.Controls.Add(Me.PictureBox1)
         Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "VotingWindowFor3"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "VotingWindow"
@@ -324,9 +325,9 @@ Partial Class VotingWindowFor3
     Friend WithEvents radioCandidate2 As System.Windows.Forms.RadioButton
     Friend WithEvents lblParty2 As System.Windows.Forms.Label
     Friend WithEvents lblName2 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents lblParty3 As System.Windows.Forms.Label
     Friend WithEvents lblName3 As System.Windows.Forms.Label
     Friend WithEvents radioCandidate3 As System.Windows.Forms.RadioButton
     Friend WithEvents pictureBoxCandidate3 As System.Windows.Forms.PictureBox
+    Friend WithEvents lblPosition As System.Windows.Forms.Label
 End Class
