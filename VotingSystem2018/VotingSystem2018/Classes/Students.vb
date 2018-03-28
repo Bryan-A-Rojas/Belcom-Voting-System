@@ -5,7 +5,6 @@
     Private Name As String
     Private YearLevel As String
     Private Course As String
-    Private Major As String
     Private Role As String
     Private DateVoted As String
 
@@ -17,16 +16,15 @@
 
     'Retrieves student details based on their ID number
     Public Sub getDetails(ByVal condition As String)
-        Database.SetSql("SELECT StudentID, Name, YearLevel, Course, Major, Role, DateVoted FROM Students WHERE StudentID = @value")
+        Database.SetSql("SELECT StudentID, Name, YearLevel, Course, Role, DateVoted FROM Students WHERE StudentID = @value")
         Dim tablename As String = "Students"
 
         Me.setStudentID(Database.GetDataSetRow(condition, tablename, 0))
         Me.setName(Database.GetDataSetRow(condition, tablename, 1))
         Me.setYearLevel(Database.GetDataSetRow(condition, tablename, 2))
         Me.setCourse(Database.GetDataSetRow(condition, tablename, 3))
-        Me.setMajor(Database.GetDataSetRow(condition, tablename, 4))
-        Me.setRole(Database.GetDataSetRow(condition, tablename, 5))
-        Me.setDateVoted(Database.GetDataSetRow(condition, tablename, 6))
+        Me.setRole(Database.GetDataSetRow(condition, tablename, 4))
+        Me.setDateVoted(Database.GetDataSetRow(condition, tablename, 5))
     End Sub
 
 
@@ -61,14 +59,6 @@
     End Sub
     Public Function getCourse()
         getCourse = Course
-    End Function
-
-    'Major Getter and Setter 
-    Public Sub setMajor(ByVal maj As String)
-        Major = maj
-    End Sub
-    Public Function getMajor()
-        getMajor = Major
     End Function
 
     'Role Getter and Setter 

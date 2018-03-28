@@ -4,7 +4,7 @@ Imports System.Text.RegularExpressions
 Module UtilityModule
 
     'Config Directories
-    Public ProjectDirectory As String = "C:\Users\bryan2366\Desktop\Code Projects\Github Repositories\Belcom-Voting-System\VotingSystem2018\"
+    Public ProjectDirectory As String = AppDomain.CurrentDomain.BaseDirectory.Replace("VotingSystem2018\bin\Debug\", "")
     Public ImagesDirectory As String = ProjectDirectory & "VotingSystem2018\Pictures\"
     Public UIImagesDirectory As String = ImagesDirectory & "UI\"
     Public CandidateImagesDirectory As String = ImagesDirectory & "Candidates\"
