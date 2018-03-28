@@ -19,6 +19,7 @@
         Database.SetSql("SELECT StudentID, Name, YearLevel, Course, Role, DateVoted FROM Students WHERE StudentID = @value")
         Dim tablename As String = "Students"
 
+        'get the details from the database
         Me.setStudentID(Database.GetDataSetRow(condition, tablename, 0))
         Me.setName(Database.GetDataSetRow(condition, tablename, 1))
         Me.setYearLevel(Database.GetDataSetRow(condition, tablename, 2))
