@@ -344,12 +344,12 @@
     'Execute the last part of the voting
     Public Sub endVoting()
         'Send the votes to the database
-        'sendVotesToDatabase()
+        sendVotesToDatabase()
 
         'Update DateVoted of student voter
-        'Database.SetSql("UPDATE students SET DateVoted = @value0 WHERE StudentID = @value1")
+        Database.SetSql("UPDATE students SET DateVoted = @value0 WHERE StudentID = @value1")
         'Using the current time, date, and the students ID number
-        'Database.ExecuteNonQuery(DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), Voter.getStudentID)
+        Database.ExecuteNonQuery(DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), Voter.getStudentID)
 
         'Go back to the login menu
         LoginForm.Show()
@@ -387,6 +387,11 @@
     Public Sub Vote(ByVal vote_number As Integer)
         'Add the voted candidate to the array list
         list_of_voted_candidates.Add(Current_Candidates_In_Window(vote_number))
+
+        'Add a log into the log_history table
+        Database.SetSql("INSERT INTO log_history (StudentID, CandidateID) VALUES (@value0,@value1);")
+        'Using the current time, date, and the students ID number
+        Database.ExecuteNonQuery(Voter.getStudentID, Current_Candidates_In_Window(vote_number).getStudentID)
 
         'Increment the stage number
         Stage_Number += 1
