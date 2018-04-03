@@ -6,6 +6,8 @@
         'Max length of characters allowed in the textboxes
         txtStudentID.MaxLength = 10
         txtStudentName.MaxLength = 250
+
+        txtStudentName.Focus()
     End Sub
 
     'Simulate real time clock

@@ -17,7 +17,7 @@
         'Example: James Jeremy Random = JJRandom
         'This is case and diacritic insensitive
         'last names with spaces should be type together
-        Database.SetSql("SELECT Name FROM Students WHERE [Voting_System].[dbo].[fnFirsties](SUBSTRING([Name], CHARINDEX(', ', [Name]) + 1, LEN([Name]))) + LEFT([Name], LEN([Name]) - CHARINDEX(',', REVERSE([Name]))) COLLATE Latin1_general_CI_AI = @value0 COLLATE Latin1_general_CI_AI AND StudentID = @value1")
+        Database.SetSql("SELECT Name FROM Students WHERE REPLACE([Voting_System].[dbo].[fnFirsties](SUBSTRING([Name], CHARINDEX(', ', [Name]) + 1, LEN([Name]))) + LEFT([Name], LEN([Name]) - CHARINDEX(',', REVERSE([Name]))), ' ' , '') COLLATE Latin1_general_CI_AI = @value0 COLLATE Latin1_general_CI_AI AND StudentID = @value1")
         Dim tablename As String = "Students"
         Dim conditions() As String = {StudentName, StudentID}
 
@@ -281,12 +281,13 @@
     Public Sub Display_Candidates(ByVal ParamArray Candidate() As Candidates)
         If Candidate.Length = 2 Then
             VotingWindowFor1.Show()
+            VotingWindowFor1.lblOrganization.Text = Candidate(0).getOrganization
             VotingWindowFor1.pictureBoxCandidate1.Image = Image.FromFile(CandidateImagesDirectory & Candidate(0).getImage)
             VotingWindowFor1.lblName1.Text = Candidate(0).getName
             VotingWindowFor1.lblParty1.Text = Candidate(0).getParty
             VotingWindowFor1.radioCandidate1.Text = "Vote for" & Environment.NewLine & getFirstName(Candidate(0).getName)
 
-            VotingWindowFor1.lblPosition.Text = "For " & Candidate(0).getPosition
+            VotingWindowFor1.lblPosition.Text = "Running For " & Candidate(0).getPosition
 
             If Not Current_Window_Number = 1 Then
                 closeWindow(Current_Window_Number)
@@ -294,6 +295,7 @@
             End If
         ElseIf Candidate.Length = 3 Then
             VotingWindowFor2.Show()
+            VotingWindowFor2.lblOrganization.Text = Candidate(0).getOrganization
             VotingWindowFor2.pictureBoxCandidate1.Image = Image.FromFile(CandidateImagesDirectory & Candidate(0).getImage)
             VotingWindowFor2.lblName1.Text = Candidate(0).getName
             VotingWindowFor2.lblParty1.Text = Candidate(0).getParty
@@ -304,7 +306,7 @@
             VotingWindowFor2.lblParty2.Text = Candidate(1).getParty
             VotingWindowFor2.radioCandidate2.Text = "Vote for" & Environment.NewLine & getFirstName(Candidate(1).getName)
 
-            VotingWindowFor2.lblPosition.Text = "For " & Candidate(0).getPosition
+            VotingWindowFor2.lblPosition.Text = "Running For " & Candidate(0).getPosition
 
             If Not Current_Window_Number = 2 Then
                 closeWindow(Current_Window_Number)
@@ -312,6 +314,7 @@
             End If
         ElseIf Candidate.Length = 4 Then
             VotingWindowFor3.Show()
+            VotingWindowFor3.lblOrganization.Text = Candidate(0).getOrganization
             VotingWindowFor3.pictureBoxCandidate1.Image = Image.FromFile(CandidateImagesDirectory & Candidate(0).getImage)
             VotingWindowFor3.lblName1.Text = Candidate(0).getName
             VotingWindowFor3.lblParty1.Text = Candidate(0).getParty
@@ -327,7 +330,7 @@
             VotingWindowFor3.lblParty3.Text = Candidate(2).getParty
             VotingWindowFor3.radioCandidate3.Text = "Vote for" & Environment.NewLine & getFirstName(Candidate(2).getName)
 
-            VotingWindowFor3.lblPosition.Text = "For " & Candidate(0).getPosition
+            VotingWindowFor3.lblPosition.Text = "Running For " & Candidate(0).getPosition
 
             If Not Current_Window_Number = 3 Then
                 closeWindow(Current_Window_Number)

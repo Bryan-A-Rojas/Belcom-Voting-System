@@ -45,6 +45,7 @@ Partial Class VotingWindowFor3
         Me.PictureBox2 = New System.Windows.Forms.PictureBox
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.lblPosition = New System.Windows.Forms.Label
+        Me.lblOrganization = New System.Windows.Forms.Label
         CType(Me.pictureBoxCandidate3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pictureBoxCandidate2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pictureBoxCandidate1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -261,12 +262,22 @@ Partial Class VotingWindowFor3
         'lblPosition
         '
         Me.lblPosition.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPosition.Location = New System.Drawing.Point(232, 64)
+        Me.lblPosition.Location = New System.Drawing.Point(165, 64)
         Me.lblPosition.Name = "lblPosition"
-        Me.lblPosition.Size = New System.Drawing.Size(501, 34)
+        Me.lblPosition.Size = New System.Drawing.Size(622, 34)
         Me.lblPosition.TabIndex = 87
         Me.lblPosition.Text = "Position to vote for"
         Me.lblPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblOrganization
+        '
+        Me.lblOrganization.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOrganization.Location = New System.Drawing.Point(346, 32)
+        Me.lblOrganization.Name = "lblOrganization"
+        Me.lblOrganization.Size = New System.Drawing.Size(262, 36)
+        Me.lblOrganization.TabIndex = 88
+        Me.lblOrganization.Text = "Organization"
+        Me.lblOrganization.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'VotingWindowFor3
         '
@@ -274,6 +285,7 @@ Partial Class VotingWindowFor3
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(900, 650)
+        Me.Controls.Add(Me.lblOrganization)
         Me.Controls.Add(Me.lblPosition)
         Me.Controls.Add(Me.lblParty3)
         Me.Controls.Add(Me.lblName3)
@@ -330,4 +342,5 @@ Partial Class VotingWindowFor3
     Friend WithEvents radioCandidate3 As System.Windows.Forms.RadioButton
     Friend WithEvents pictureBoxCandidate3 As System.Windows.Forms.PictureBox
     Friend WithEvents lblPosition As System.Windows.Forms.Label
+    Friend WithEvents lblOrganization As System.Windows.Forms.Label
 End Class

@@ -54,8 +54,8 @@ Module UtilityModule
 
     'Get first name of a person after the space
     Function getFirstName(ByVal full_name As String) As String
-        Dim split_string() As String = Regex.Split(full_name, "\s+")
-        Return split_string(1).Replace(" ", "")
+        Dim name = full_name.Split(", ")(1)
+        Return name.Split(" ")(1)
     End Function
 
 End Module
