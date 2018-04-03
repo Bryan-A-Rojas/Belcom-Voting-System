@@ -87,7 +87,7 @@ Partial Class VotingWindowFor2
         Me.btnVote.BackColor = System.Drawing.Color.Lime
         Me.btnVote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnVote.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnVote.Location = New System.Drawing.Point(745, 417)
+        Me.btnVote.Location = New System.Drawing.Point(745, 567)
         Me.btnVote.Name = "btnVote"
         Me.btnVote.Size = New System.Drawing.Size(143, 71)
         Me.btnVote.TabIndex = 69
@@ -98,7 +98,7 @@ Partial Class VotingWindowFor2
         '
         Me.radioCandidate1.AutoSize = True
         Me.radioCandidate1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.radioCandidate1.Location = New System.Drawing.Point(123, 373)
+        Me.radioCandidate1.Location = New System.Drawing.Point(123, 523)
         Me.radioCandidate1.Name = "radioCandidate1"
         Me.radioCandidate1.Size = New System.Drawing.Size(190, 29)
         Me.radioCandidate1.TabIndex = 66
@@ -110,7 +110,7 @@ Partial Class VotingWindowFor2
         Me.radioAbstain.AutoSize = True
         Me.radioAbstain.Checked = True
         Me.radioAbstain.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.radioAbstain.Location = New System.Drawing.Point(350, 442)
+        Me.radioAbstain.Location = New System.Drawing.Point(350, 592)
         Me.radioAbstain.Name = "radioAbstain"
         Me.radioAbstain.Size = New System.Drawing.Size(102, 29)
         Me.radioAbstain.TabIndex = 67
@@ -121,7 +121,7 @@ Partial Class VotingWindowFor2
         'lblName1
         '
         Me.lblName1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblName1.Location = New System.Drawing.Point(118, 301)
+        Me.lblName1.Location = New System.Drawing.Point(118, 451)
         Me.lblName1.Name = "lblName1"
         Me.lblName1.Size = New System.Drawing.Size(334, 33)
         Me.lblName1.TabIndex = 70
@@ -131,7 +131,7 @@ Partial Class VotingWindowFor2
         'lblParty1
         '
         Me.lblParty1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblParty1.Location = New System.Drawing.Point(118, 334)
+        Me.lblParty1.Location = New System.Drawing.Point(118, 484)
         Me.lblParty1.Name = "lblParty1"
         Me.lblParty1.Size = New System.Drawing.Size(334, 33)
         Me.lblParty1.TabIndex = 71
@@ -142,7 +142,7 @@ Partial Class VotingWindowFor2
         '
         Me.radioCandidate2.AutoSize = True
         Me.radioCandidate2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.radioCandidate2.Location = New System.Drawing.Point(485, 373)
+        Me.radioCandidate2.Location = New System.Drawing.Point(485, 523)
         Me.radioCandidate2.Name = "radioCandidate2"
         Me.radioCandidate2.Size = New System.Drawing.Size(190, 29)
         Me.radioCandidate2.TabIndex = 77
@@ -152,7 +152,7 @@ Partial Class VotingWindowFor2
         'lblParty2
         '
         Me.lblParty2.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblParty2.Location = New System.Drawing.Point(480, 334)
+        Me.lblParty2.Location = New System.Drawing.Point(480, 484)
         Me.lblParty2.Name = "lblParty2"
         Me.lblParty2.Size = New System.Drawing.Size(315, 33)
         Me.lblParty2.TabIndex = 79
@@ -162,7 +162,7 @@ Partial Class VotingWindowFor2
         'lblName2
         '
         Me.lblName2.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblName2.Location = New System.Drawing.Point(480, 301)
+        Me.lblName2.Location = New System.Drawing.Point(480, 451)
         Me.lblName2.Name = "lblName2"
         Me.lblName2.Size = New System.Drawing.Size(315, 33)
         Me.lblName2.TabIndex = 78
@@ -175,7 +175,7 @@ Partial Class VotingWindowFor2
         Me.pictureBoxCandidate2.Image = CType(resources.GetObject("pictureBoxCandidate2.Image"), System.Drawing.Image)
         Me.pictureBoxCandidate2.Location = New System.Drawing.Point(485, 114)
         Me.pictureBoxCandidate2.Name = "pictureBoxCandidate2"
-        Me.pictureBoxCandidate2.Size = New System.Drawing.Size(198, 184)
+        Me.pictureBoxCandidate2.Size = New System.Drawing.Size(262, 308)
         Me.pictureBoxCandidate2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pictureBoxCandidate2.TabIndex = 73
         Me.pictureBoxCandidate2.TabStop = False
@@ -186,7 +186,7 @@ Partial Class VotingWindowFor2
         Me.pictureBoxCandidate1.Image = CType(resources.GetObject("pictureBoxCandidate1.Image"), System.Drawing.Image)
         Me.pictureBoxCandidate1.Location = New System.Drawing.Point(123, 114)
         Me.pictureBoxCandidate1.Name = "pictureBoxCandidate1"
-        Me.pictureBoxCandidate1.Size = New System.Drawing.Size(198, 184)
+        Me.pictureBoxCandidate1.Size = New System.Drawing.Size(262, 308)
         Me.pictureBoxCandidate1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pictureBoxCandidate1.TabIndex = 65
         Me.pictureBoxCandidate1.TabStop = False
@@ -226,7 +226,7 @@ Partial Class VotingWindowFor2
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(900, 500)
+        Me.ClientSize = New System.Drawing.Size(900, 650)
         Me.Controls.Add(Me.lblPosition)
         Me.Controls.Add(Me.lblParty2)
         Me.Controls.Add(Me.lblName2)
