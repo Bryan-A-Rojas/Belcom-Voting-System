@@ -17,7 +17,11 @@
 
     'Login Button
     Private Sub Login_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLogin.Click
-        login()
+        Try
+            login()
+        Catch ex As Exception
+            MsgBox("Please contact the admins, Database error", MsgBoxStyle.Exclamation, "Error")
+        End Try
     End Sub
     Private Sub OnEnterKeyPress(ByVal sender As Object, ByVal e As KeyEventArgs) Handles txtStudentName.KeyDown, txtStudentID.KeyDown
         'Do the same thing as clicking login when pressing enter
