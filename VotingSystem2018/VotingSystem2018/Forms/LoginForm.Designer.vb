@@ -90,7 +90,7 @@ Partial Class LoginForm
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(282, 125)
+        Me.Label2.Location = New System.Drawing.Point(262, 113)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(347, 47)
         Me.Label2.TabIndex = 28
@@ -137,9 +137,9 @@ Partial Class LoginForm
         'LogoPictureBox
         '
         Me.LogoPictureBox.Image = CType(resources.GetObject("LogoPictureBox.Image"), System.Drawing.Image)
-        Me.LogoPictureBox.Location = New System.Drawing.Point(645, 79)
+        Me.LogoPictureBox.Location = New System.Drawing.Point(610, 79)
         Me.LogoPictureBox.Name = "LogoPictureBox"
-        Me.LogoPictureBox.Size = New System.Drawing.Size(243, 296)
+        Me.LogoPictureBox.Size = New System.Drawing.Size(282, 296)
         Me.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.LogoPictureBox.TabIndex = 14
         Me.LogoPictureBox.TabStop = False

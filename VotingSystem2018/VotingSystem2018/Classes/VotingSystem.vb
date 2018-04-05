@@ -388,16 +388,20 @@
         'Add the voted candidate to the array list
         list_of_voted_candidates.Add(Current_Candidates_In_Window(vote_number))
 
-        'Add a log into the log_history table
-        Database.SetSql("INSERT INTO log_history (StudentID, CandidateID) VALUES (@value0,@value1);")
-        'Using the current time, date, and the students ID number
-        Database.ExecuteNonQuery(Voter.getStudentID, Current_Candidates_In_Window(vote_number).getStudentID)
+        Try
+            'Add a log into the log_history table
+            Database.SetSql("INSERT INTO log_history (StudentID, CandidateID) VALUES (@value0,@value1);")
+            'Using the current time, date, and the students ID number
+            Database.ExecuteNonQuery(Voter.getStudentID, Current_Candidates_In_Window(vote_number).getStudentID)
 
-        'Increment the stage number
-        Stage_Number += 1
+            'Increment the stage number
+            Stage_Number += 1
 
-        'Show the next stage
-        Change_Stage()
+            'Show the next stage
+            Change_Stage()
+        Catch ex As Exception
+             MsgBox("Please contact the admins, Database error", MsgBoxStyle.Exclamation, "Error")
+        End Try 
     End Sub
 
     Public Sub sendVotesToDatabase()
