@@ -1,0 +1,2 @@
+C:\Users\bryan2366\Desktop\Code Projects\Github Repositories\Belcom-Voting-System\VotingSystem2018_Admin\VotingSystem2018_Admin\VotingSystem2018_Admin\obj\Debug\Interop.XcpControlLib.dll
+C:\Users\bryan2366\Desktop\Code Projects\Github Repositories\Belcom-Voting-System\VotingSystem2018_Admin\VotingSystem2018_Admin\VotingSystem2018_Admin\obj\Debug\VotingSystem2018_Admin.vbproj.ResolveComReference.cache
